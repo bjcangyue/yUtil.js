@@ -19,3 +19,12 @@ function floatAdd(arg1, arg2) {
     m = Math.pow(10, Math.max(r1, r2));
     return (arg1 * m + arg2 * m) / m;
 }
+
+/**
+ * 千分位-格式化: 常用于显示价格
+ * @param num
+ * @returns {string}
+ */
+function toThousands(num) {
+    return parseFloat(num).toFixed(2).replace(/(\d{1,3})(?=(\d{3})+(?:\.))/g, "$1,");
+}
